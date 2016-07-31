@@ -1,0 +1,56 @@
+//GATE 1
+
+SUB (Search_Window)
+	WAITMS(100)
+	WNDGETINFO(WNDFIND("Sarah Server | Gepard Shield 2.0 (^-_-^)", 0), $PosW_x, $PosW_y, $SizeW_x, $SizeW_y)
+END_SUB
+
+SUB (Klick_OnReturned)
+END_SUB
+
+SUB (Wing)
+	WAITMS(100)
+	KEYPRESS(#F4)	
+	WAITMS(200)
+END_SUB
+
+SUB (Teleport)
+	WAITMS(100)
+	KEYPRESS(#F5)	
+	WAITMS(300)
+	KEYPRESS(#ENTER)
+	WAITMS(200)
+END_SUB
+
+SUB (Close_Game)
+	WAIT(1)
+	KEYDOWN (#ALT)
+	WAITMS (100)
+	KEYDOWN (#F4)
+	WAITMS (100)
+	KEYUP (#F4)
+	KEYUP (#ALT)
+	WAIT(1)	
+END_SUB	
+
+SUB (Cursor_Remove)
+	WAITMS(100)
+	MOVE($PosW_x,$PosW_y)
+END_SUB
+
+//GATE 2
+
+SUB (Cheack_State)
+END_SUB
+
+SUB (Search_Card, $par1, $par2, $par3, $par4)
+END_SUB
+
+SUB (Search_Danger, $par1, $par2, $par3, $par4)
+END_SUB
+
+SUB (Search_Loot, $par1, $par2, $par3, $par4)
+END_SUB
+
+SUB (Search_Mob, $par1, $par2, $par3, $par4)
+END_SUB

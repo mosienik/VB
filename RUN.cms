@@ -1,0 +1,7 @@
+#ps2_mouse
+#ps2_keyboard
+#name "SARAHbot ver 0.1"
+#logfile
+
+#include "data/Ini.cms"
+#include "data/Core.cms"
