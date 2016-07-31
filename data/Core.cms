@@ -50,6 +50,7 @@ END_SUB
 SUB (Search_Danger, $par1, $par2, $par3, $par4)
     GETSCREEN ($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20)
     IF_PIXEL_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20, 16776960)
+		$Search_Detected = 1 
     Teleport()
 END_SUB
 
