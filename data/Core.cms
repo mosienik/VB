@@ -5,10 +5,6 @@ SUB (Search_Window)
 	WNDGETINFO(WNDFIND("Sarah Server | Gepard Shield 2.0 (^-_-^)", 0), $PosW_x, $PosW_y, $SizeW_x, $SizeW_y)
 END_SUB
 
-SUB (Klick_OnReturned, $par1 , $par2)
-	LCLICK($_return1+$par1, $_return2+$par2)
-END_SUB
-
 SUB (Wing)
 	WAITMS(100)
 	KEYPRESS(#F4)	
@@ -45,6 +41,12 @@ SUB (Cheack_State)
 END_SUB
 
 SUB (Search_Card, $par1, $par2, $par3, $par4)
+		GETSCREEN ($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20)
+		IF_PICTURE_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20,"data\Card.bmp", 13217535)
+		LCLICK($_return1, $_return2)
+		WAIT(1)		
+		$Search_Detected = 1
+		END_IF
 END_SUB
 
 SUB (Search_Danger, $par1, $par2, $par3, $par4)
@@ -60,7 +62,7 @@ END_SUB
 SUB (Search_Mob, $par1, $par2, $par3, $par4)
 	GETSCREEN ($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20)
 	IF_PIXEL_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20, 16776960)
-	Click_OnReturned(5, 10)
+	LCLICK($_return1, $_return2)
 	WAIT(1)	
 	$Search_Detected = 1 
 	END_IF
