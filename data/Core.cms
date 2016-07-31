@@ -48,6 +48,9 @@ SUB (Search_Card, $par1, $par2, $par3, $par4)
 END_SUB
 
 SUB (Search_Danger, $par1, $par2, $par3, $par4)
+    GETSCREEN ($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20)
+    IF_PIXEL_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20, 16776960)
+    Teleport()
 END_SUB
 
 SUB (Search_Loot, $par1, $par2, $par3, $par4)
@@ -55,8 +58,8 @@ END_SUB
 
 SUB (Search_Mob, $par1, $par2, $par3, $par4)
 	GETSCREEN ($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20)
-	IF_PIXEL_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20, 16776960)   
- 	Klick_OnReturned(5, 10)
+	IF_PIXEL_IN($par1+$PosW_x, $par2+$PosW_y+20, $par3+$PosW_x, $par4+$PosW_y+20, 16776960)
+	Click_OnReturned(5, 10)
 	WAIT(1)	
 	$Search_Detected = 1 
 	END_IF
