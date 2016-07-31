@@ -35,9 +35,18 @@ SUB (Cursor_Remove)
 	MOVE($PosW_x,$PosW_y)
 END_SUB
 
+SUB (Turn_Screen)
+    FOR($a, $a<6)
+	    RDOWN(500, 500)
+	    WAITMS(100)
+    	RUP(545, 545)
+    END_CYC
+END_SUB
+
+
 //GATE 2
 
-SUB (Cheack_State)
+SUB (Check_State)
 END_SUB
 
 SUB (Search_Card, $par1, $par2, $par3, $par4)
